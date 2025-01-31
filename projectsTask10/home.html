@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Explorer</title>
+    
+    <!-- FullPage.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" />
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        .section {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .content {
+            z-index: 2;
+            max-width: 80%;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.3em;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 350px;
+            height: 250px;
+            border-radius: 15px;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            filter: brightness(80%);
+        }
+
+        .gallery .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            font-size: 1.2em;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .gallery img:hover .caption {
+            display: block;
+        }
+
+        .scroll-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .scroll-buttons button {
+            background: #ff4081;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .scroll-buttons button:hover {
+            background: #ff6699;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .slick-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial {
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .contact-info {
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Navigation bar styles */
+        .nav-bar {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 999;
+            text-align: center;
+        }
+
+        .nav-bar a {
+            display: block;
+            color: white;
+            font-size: 2em;
+            padding: 20px;
+            margin: 10px 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-bar a:hover {
+            background-color: #ff4081;
+            transform: scale(1.2);
+            border-radius: 50%;
+        }
+
+        .nav-bar a i {
+            font-size: 2.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-bar a:hover i {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section" style="background-image: url('/images/marita-kavelashvili-ugnrXk1129g-unsplash.jpg');" data-anchor="welcome">
+            <div class="content">
+                <h1>Welcome to Nature Explorer</h1>
+                <p>Find peace in breathtaking landscapes.</p>
+            </div>
+        </div>
+        <div class="section" style="background-image: url('/images/andy-ramos-kr9HOdBFjuk-unsplash.jpg');" data-anchor="gallery">
+            <div class="content">
+                <h1>Gallery</h1>
+                <div class="gallery">
+                    <div>
+                        <img src="/images/alessandro-guaitoli-xBfE80O1diU-unsplash.jpg" alt="Nature 1">
+                        <div class="caption">Nature 1</div>
+                    </div>
+                    <div>
+                        <img src="/images/john-towner-3Kv48NS4WUU-unsplash.jpg" alt="Nature 2">
+                        <div class="caption">Nature 2</div>
+                    </div>
+                    <div>
+                        <img src="/images/marita-kavelashvili-ugnrXk1129g-unsplash.jpg" alt="Nature 3">
+                        <div class="caption">Nature 3</div>
+                    </div>
+                    <div>
+                        <img src="/images/andy-ramos-kr9HOdBFjuk-unsplash.jpg" alt="Nature 4">
+                        <div class="caption">Nature 4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background-image: url('/images/john-towner-3Kv48NS4WUU-unsplash.jpg');" data-anchor="testimonials">
+            <div class="content">
+                <h1>Testimonials</h1>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <p>"An unforgettable experience! The landscapes were mesmerizing!"</p>
+                        <span>- John Doe</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"I felt at peace in nature. Truly rejuvenating!"</p>
+                        <span>- Jane Smith</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"A fantastic journey through nature's beauty. Highly recommend!"</p>
+                        <span>- Mark Lee</span>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The best getaway to reconnect with nature!"</p>
+                        <span>- Emily Turner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" style="background-image: url('/images/andy-ramos-kr9HOdBFjuk-unsplash.jpg');" data-anchor="contact">
+            <div class="content">
+                <h1>Contact Us</h1>
+                <p>Get in touch for an unforgettable experience.</p>
+                <div class="contact-info">
+                    <p>Email: contact@natureexplorer.com</p>
+                    <p>Phone: +1 234 567 890</p>
+                    <p>Address: 123 Nature St, City, Country</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left Navigation Bar -->
+    <div class="nav-bar">
+        <a href="#welcome"><i class="fas fa-home"></i></a>
+        <a href="#gallery"><i class="fas fa-image"></i></a>
+        <a href="#testimonials"><i class="fas fa-comments"></i></a>
+        <a href="#contact"><i class="fas fa-phone-alt"></i></a>
+    </div>
+
+    <div class="scroll-buttons">
+        <button onclick="fullpage_api.moveSectionUp()">⬆</button>
+        <button onclick="fullpage_api.moveSectionDown()">⬇</button>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Nature Explorer. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        new fullpage('#fullpage', {
+            autoScrolling: true,
+            navigation: true,
+            anchors: ['welcome', 'gallery', 'testimonials', 'contact'],
+        });
+
+        $('.testimonial-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+    </script>
+</body>
+</html>
